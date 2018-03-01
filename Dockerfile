@@ -2,7 +2,9 @@ FROM jenkins/jenkins:lts
 LABEL maintainer=markwoo<wcgwuxinwei@gmail.com>
 
 USER root
-RUN sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
+RUN sed -i 's/deb.debian.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/sources.list
+
+# install docker in docker
 RUN apt-get update && \
         apt-get -y install apt-transport-https \
         curl \
